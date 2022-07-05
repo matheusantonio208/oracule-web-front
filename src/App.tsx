@@ -1,19 +1,15 @@
+import React from 'react';
 import Modal from 'react-modal';
 import { GlobalStyle } from './styles/global';
-import { useState } from 'react';
+import { Routes } from './routes/routes';
 
 Modal.setAppElement('#root');
 
 export function App() {
-  const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
-    useState(false);
-
-  function handleOpenNewTransactionModal() {
-    setIsNewTransactionModalOpen(true);
-  }
-
-  function handleCloseNewTransactionModal() {
-    setIsNewTransactionModalOpen(false);
-  }
-  return <GlobalStyle />;
+  return (
+    <React.Fragment>
+      <GlobalStyle />
+      <Routes />
+    </React.Fragment>
+  );
 }

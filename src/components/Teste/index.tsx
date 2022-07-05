@@ -1,14 +1,10 @@
-import { useState } from 'react';
-
 import { Wrapper, Container } from './styles';
 
 export function Xxxx() {
-  const [stateName, setStateName] = useState([]);
-
   return (
     <Wrapper>
       <Container>
-        <div />
+        <h1>Testizão</h1>
       </Container>
     </Wrapper>
   );
