@@ -1,9 +1,7 @@
 import React from 'react';
-import Modal from 'react-modal';
 import { GlobalStyle } from './styles/global';
 import { Routes } from './routes/routes';
-
-Modal.setAppElement('#root');
+import './assets/scss/themes.scss';
 
 export function App() {
   return (
