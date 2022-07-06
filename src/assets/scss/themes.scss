@@ -1,16 +1,15 @@
-@import "../scss/icons.scss";
-@import "../scss/config/minimal/bootstrap.scss";
-@import "../scss/config/minimal/app.scss";
-@import "../scss/config/minimal/custom.scss";  
-@import"./shepherd.css";
-@import "./mermaid.min.css";
+@import './icons.scss';
+@import './config/minimal/bootstrap.scss';
+@import './config/minimal/app.scss';
+@import './config/minimal/custom.scss';
+@import './shepherd.css';
+@import './mermaid.min.css';
 
-//RTL 
+//RTL
 // @import "../scss/rtl/components-rtl";
 // @import "../scss/rtl/layouts-rtl";
 // @import "../scss/rtl/plugins-rtl";
 // @import "../scss/rtl/pages-rtl";
-
 
 //Rigthsidebar offcanvas
 .offcanvas-header-dark {
@@ -106,50 +105,47 @@ body {
   background-color: #25a0e2 !important;
 }
 
-.Toastify__toast{
+.Toastify__toast {
   min-height: 43px !important;
   max-height: 43px !important;
 }
 
-
-
-
 @each $color, $value in $theme-colors {
   .simplebar-track-#{$color} {
-    .simplebar-scrollbar:before{
-      background: $value !important; 
+    .simplebar-scrollbar:before {
+      background: $value !important;
     }
-  }   
+  }
 }
 
 //authentication
-#tsparticles{
-  canvas{
+#tsparticles {
+  canvas {
     position: absolute !important;
   }
 }
 
 // chat
-.chat-conversation .chat-list .message-box-drop{
-  .nav-btn{
-      font-size: 18px;
-      padding: 4px;
-      color: $gray-600;
+.chat-conversation .chat-list .message-box-drop {
+  .nav-btn {
+    font-size: 18px;
+    padding: 4px;
+    color: $gray-600;
   }
 }
 
 // landing page
 .process-card {
   .process-arrow-img {
-      left: auto;
-      right: 75%;
-      transform: scaleX(-1);
+    left: auto;
+    right: 75%;
+    transform: scaleX(-1);
   }
 }
 .icon-effect {
   &::before {
-      left: auto;
-      right: 0;
+    left: auto;
+    right: 0;
   }
 }
 
