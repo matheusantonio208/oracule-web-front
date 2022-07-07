@@ -1,17 +1,15 @@
-// 
 // _layouts.scss
-// 
 
 [data-layout-width="boxed"] {
     body{
         background-color: $boxed-body-bg;
     }
-    
+
     #layout-wrapper {
         max-width: $boxed-layout-width;
         margin: 0 auto;
-        box-shadow: $box-shadow;
         background-color: var(--#{$variable-prefix}body-bg);
+        box-shadow: $box-shadow;
     }
 
     &[data-layout="vertical"]{
@@ -21,9 +19,9 @@
     }
 
     #page-topbar, .footer {
+        left: 0 !important;
         max-width: $boxed-layout-width;
         margin: 0 auto;
-        left: 0 !important;
     }
 
     &[data-sidebar-size="sm-hover"], &[data-sidebar-size="sm"] {
@@ -40,7 +38,7 @@
                 }
             }
         }
-        
+
         #page-topbar, .footer {
             left: 0 !important;
             max-width: calc(#{$boxed-layout-width} - #{$vertical-menu-width-sm});
@@ -49,11 +47,12 @@
             }
         }
     }
+
     &[data-sidebar-size="sm-hover-active"],
     &[data-sidebar-size="lg"] {
         #page-topbar, .footer {
             max-width: calc(#{$boxed-layout-width} - #{$vertical-menu-width});
-            
+
             @media (min-width: 768px){
                 left: $vertical-menu-width !important;
             }
@@ -70,12 +69,9 @@
     }
 
     // deteched
-    
+
     &[data-layout=vertical][data-layout-style=detached]{
-        body{
-            background-color: var(--#{$variable-prefix}body-bg);
-        }
-        
+
         @media (min-width: 1024.1px){
             #layout-wrapper{
                 max-width: 1300px;
@@ -87,10 +83,14 @@
             }
         }
 
+        body{
+            background-color: var(--#{$variable-prefix}body-bg);
+        }
+
         &[data-sidebar-size="sm-hover"], &[data-sidebar-size="sm"], &[data-sidebar-size="md"], &[data-sidebar-size="lg"] {
             #page-topbar, .footer {
-                max-width: 100%;
                 left: 0 !important;
+                max-width: 100%;
             }
         }
     }
@@ -102,12 +102,15 @@
     #page-topbar, #layout-wrapper, .footer {
         max-width: 100%;
     }
+
     .container-fluid, .navbar-header {
         max-width: $boxed-layout-width;
     }
+
     .navbar-header {
         padding: 0 calc(#{$grid-gutter-width} / 2) 0 0;
     }
+
     &[data-sidebar-size="sm-hover"], &[data-sidebar-size="sm"] &[data-sidebar-size="sm-hover-active"],
     &[data-sidebar-size="lg"] {
         #page-topbar, .footer {

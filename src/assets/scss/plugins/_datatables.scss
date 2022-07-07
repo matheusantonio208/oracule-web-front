@@ -1,61 +1,61 @@
-//
+
 // _datatables.scss
-//
+
 
 table.dataTable td.dataTables_empty,
 table.dataTable th.dataTables_empty {
-    text-align: center;
+    --vz-table-accent-bg: $card-bg;
+
     padding: 50px;
     font-weight: $font-weight-semibold;
-    --vz-table-accent-bg: $card-bg;
+    text-align: center;
 }
 
-table.dataTable>thead .sorting:before,
-table.dataTable>thead .sorting_asc:before,
-table.dataTable>thead .sorting_desc:before,
-table.dataTable>thead .sorting_asc_disabled:before,
-table.dataTable>thead .sorting_desc_disabled:before {
+table.dataTable>thead .sorting::before,
+table.dataTable>thead .sorting_asc::before,
+table.dataTable>thead .sorting_desc::before,
+table.dataTable>thead .sorting_asc_disabled::before,
+table.dataTable>thead .sorting_desc_disabled::before {
     content:"\f0360";
     position: absolute;
-    right: 0.5rem;
     top: 12px;
+    right: 0.5rem;
     font-size: .8rem;
     font-family: "Material Design Icons";
 }
 
-table.dataTable>thead .sorting:after,
-table.dataTable>thead .sorting_asc:after,
-table.dataTable>thead .sorting_desc:after,
-table.dataTable>thead .sorting_asc_disabled:after,
-table.dataTable>thead .sorting_desc_disabled:after {
+table.dataTable>thead .sorting::after,
+table.dataTable>thead .sorting_asc::after,
+table.dataTable>thead .sorting_desc::after,
+table.dataTable>thead .sorting_asc_disabled::after,
+table.dataTable>thead .sorting_desc_disabled::after {
     content: "\f035d";
     position: absolute;
-    right: 0.5rem;
     top: 18px;
+    right: 0.5rem;
     font-size: .8rem;
     font-family: "Material Design Icons";
 }
 
 table.dataTable>tbody>tr.child span.dtr-title {
-    font-weight: $font-weight-semibold;
     min-width: 150px;
+    font-weight: $font-weight-semibold;
 }
 
 
-//responsive 
+// responsive
 table {
     &.dataTable {
         &.dtr-inline {
             &.collapsed {
                 >tbody {
                     >tr {
-
                         >th,
                         >td {
                             &.dtr-control {
                                 &::before {
-                                    background-color: $primary;
                                     border-color: $card-bg;
+                                    background-color: $primary;
                                 }
                             }
                         }
@@ -100,11 +100,10 @@ table {
 
 
 .table-card {
-
     .dataTables_length,
     .dataTables_filter {
         padding: $card-cap-padding-y $card-cap-padding-x;
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
 
     .dataTables_info,
@@ -136,18 +135,21 @@ div{
     &.dtr-modal {
         div {
             &.dtr-modal-display {
-                background-color: $modal-content-bg;
-                border-color: $border-color;
-                box-shadow: none;
                 height: 70%;
+                border-color: $border-color;
+                background-color: $modal-content-bg;
+                box-shadow: none;
             }
+
             &.dtr-modal-content {
                 padding: $modal-inner-padding;
+
                 h2 {
-                    font-size: $font-size-lg;
-                    font-weight: $font-weight-semibold;
                     margin-bottom: 15px;
+                    font-weight: $font-weight-semibold;
+                    font-size: $font-size-lg;
                 }
+
                 .dtr-details{
                     tr {
                         td {
@@ -156,15 +158,17 @@ div{
                     }
                 }
             }
+
             &.dtr-modal-close {
-                font-size: 24px;
                 top: 9px;
                 right: 11px;
                 width: 30px;
                 height: 30px;
-                line-height: 30px;
-                background-color: $card-bg;
                 border-color: $border-color;
+                background-color: $card-bg;
+                font-size: 24px;
+                line-height: 30px;
+
                 &:hover {
                     background-color: var(--#{$variable-prefix}light);
                 }

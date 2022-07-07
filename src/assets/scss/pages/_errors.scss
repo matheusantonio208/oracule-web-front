@@ -1,23 +1,12 @@
-//
+
 // _errors.scss
-//
+
 
 .error-basic-img{
     max-width: 450px;
 }
 
 .error-500 {
-    .title {
-        font-size: 250px;
-    }
-
-    .error-500-img {
-        position: absolute;
-        top: 57px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
 
     @media (min-width: 768px) and (max-width: 991.98px) {
         .title {
@@ -25,21 +14,33 @@
         }
 
         .error-500-img {
-            width: 20% !important;
             top: 43px;
+            width: 20% !important;
         }
     }
 
     @media (max-width: 767.98px) {
         .title {
-            font-size: 68px;
             margin-top: 35px;
+            font-size: 68px;
         }
 
         .error-500-img {
             position: relative;
-            top: 0px;
+            top: 0;
         }
+    }
+
+    .title {
+        font-size: 250px;
+    }
+
+    .error-500-img {
+        position: absolute;
+        top: 57px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
     }
 }
 

@@ -1,60 +1,60 @@
 
-//
+
 // _multijs.scss
-//
+
 
 .multi-wrapper{
-  border: none;
   position: relative;
+  border: none;
 
   &::before{
     content: "\ea61";
     position: absolute;
-    font-family: "remixicon";
-    left: 50%;
-    transform: translateX(-50%);
     bottom: 86px;
-    width: 32px;
-    height: 32px;
+    left: 50%;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    color: $text-muted;
     background-color: var(--#{$variable-prefix}light);
-    z-index: 1;
+    color: $text-muted;
+    font-size: 16px;
+    font-family: remixicon;
+    transform: translateX(-50%);
   }
-  
+
   .non-selected-wrapper{
     border: 1px solid $input-border-color;
-    background-color: $input-bg;
     border-top-left-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
+    background-color: $input-bg;
   }
 
   .selected-wrapper, .non-selected-wrapper{
     &::-webkit-scrollbar {
-      -webkit-appearance: none;
+      appearance: none;
     }
-  
+
     &::-webkit-scrollbar:vertical {
       width: 10px;
     }
-  
+
     &::-webkit-scrollbar:horizontal {
       height: 9px;
     }
-  
+
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(var(--#{$variable-prefix}dark-rgb), .2);
-      border-radius: 10px;
       border: 2px solid $input-bg;
+      border-radius: 10px;
+      background-color: rgb(var(--#{$variable-prefix}dark-rgb) .2);
     }
-  
+
     &::-webkit-scrollbar-track {
-      border-radius: 10px;  
-      background-color: $input-bg; 
+      border-radius: 10px;
+      background-color: $input-bg;
     }
 }
 
@@ -64,6 +64,7 @@
 
   .item{
     color: $input-color;
+
     &:hover{
       background-color: rgba($primary, 0.1);
     }
@@ -71,28 +72,29 @@
 
   .selected-wrapper{
     border: 1px solid $input-border-color;
-    background: $input-bg;
     border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
+    background: $input-bg;
   }
 
   .search-input{
     flex: 0 0 auto;
+    margin-bottom: 16px;
     padding: $input-padding-y $input-padding-x;
-    font-family: $input-font-family;
-    font-size: $input-font-size;
-    color: $input-color;
-    background-color: $input-bg;
     border: $input-border-width solid $input-border-color;
     border-radius: $input-border-radius;
-    margin-bottom: 16px;
+    background-color: $input-bg;
+    color: $input-color;
+    font-size: $input-font-size;
+    font-family: $input-font-family;
+
     &::placeholder{
       color: $input-placeholder-color;
     }
   }
 
   .header{
-    font-weight: $font-weight-semibold;
     color: var(--#{$variable-prefix}gray-600);
+    font-weight: $font-weight-semibold;
   }
 }

@@ -1,21 +1,18 @@
-// 
-// _table.scss
-// 
-
 .table {
     th {
         font-weight: $font-weight-semibold;
     }
 
     .table-light {
-        color: $body-color;
         border-color: $table-border-color;
         background-color: var(--#{$variable-prefix}light);
+        color: $body-color;
     }
 
     >thead {
         border-color: $table-border-color;
     }
+
     >:not(:first-child) {
         border-top-width: $table-border-width;
     }
@@ -23,7 +20,6 @@
 
 
 .table-nowrap {
-
     th,
     td {
         white-space: nowrap;
@@ -37,7 +33,6 @@
 
     th,
     td {
-
         &:first-child{
             padding-left: 16px;
         }
@@ -72,13 +67,14 @@ $value in $theme-colors {
 
 .table {
     .form-check {
-        padding-left: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
+        padding-left: 0;
+
         .form-check-input {
-            margin-left: 0px;
-            margin-top: 0px;
-            float: none;
             vertical-align: middle;
+            float: none;
+            margin-top: 0;
+            margin-left: 0;
         }
     }
 }
@@ -87,6 +83,7 @@ $value in $theme-colors {
     .table-light{
         background-color: var(--#{$variable-prefix}light);
         color: var(--#{$variable-prefix}body-color);
+
         th, td{
             background-color: var(--#{$variable-prefix}light);
         }

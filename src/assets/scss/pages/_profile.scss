@@ -1,6 +1,6 @@
-//
+
 // _profile.scss
-//
+
 
 .error-text {
     text-shadow: 4px 4px rgba($success, 0.4);
@@ -15,9 +15,9 @@
 
 .profile-wid-bg {
     position: absolute;
-    left: 0;
-    right: 0;
     top: 0;
+    right: 0;
+    left: 0;
     height: 320px;
     @media (max-width: 575.98px) {
         height: 445px;
@@ -26,20 +26,20 @@
     &::before {
         content: "";
         position: absolute;
-        left: 0;
-        right: 0;
         top: 0;
+        right: 0;
         bottom: 0;
-        opacity: 0.9;
+        left: 0;
         background: $primary;
         background: linear-gradient(to top, darken($primary, 25%), $primary);
+        opacity: 0.9;
 
     }
 
     .profile-wid-img {
+        object-fit: cover;
         width: 100%;
         height: 100%;
-        object-fit: cover;
     }
 }
 
@@ -73,9 +73,9 @@ $value in $theme-colors {
     position: relative;
 
     .profile-img {
+        object-fit: cover;
         width: 100%;
         height: 250px;
-        object-fit: cover;
 
         @media (max-width:991px) {
             height: 160px;
@@ -98,8 +98,8 @@ $value in $theme-colors {
     .profile-photo-edit {
         position: absolute;
         right: 0;
-        left: auto;
         bottom: 0;
+        left: auto;
         cursor: pointer;
     }
 
@@ -126,10 +126,10 @@ $value in $theme-colors {
 
         &::before {
             content: "";
-            border-left: 2px dashed $border-color;
             position: absolute;
-            height: 100%;
             left: 23px;
+            height: 100%;
+            border-left: 2px dashed $border-color;
         }
 
         &:first-child {
@@ -140,8 +140,8 @@ $value in $theme-colors {
 
         &:last-child {
             &::before {
-                height: 20px;
                 top: 3px;
+                height: 20px;
             }
         }
     }
@@ -159,9 +159,9 @@ $value in $theme-colors {
     }
 
     .profile-img {
+        object-fit: cover;
         width: 100%;
         height: 250px;
-        object-fit: cover;
 
         @media (max-width:991.98px) {
             height: 160px;
@@ -178,7 +178,6 @@ $value in $theme-colors {
 }
 
 @media (max-width:575.98px) {
-
     [data-layout="horizontal"]{
         .profile-foreground{
             margin-top: 0 !important;

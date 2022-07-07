@@ -1,22 +1,41 @@
-//
 // _two-column.scss
-// 
-
 [data-layout="twocolumn"] {
+
+    @media (max-width: 991.98px) {
+        .logo {
+            span.logo-lg {
+                display: block;
+            }
+
+            span.logo-sm {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 575.98px) {
+        .main-content{
+            margin-left: 0;
+        }
+
+        #page-topbar, .footer{
+            left: 0;
+        }
+    }
+
     .app-menu {
-        padding-bottom: 0;
-        width: $twocolumn-menu-width;
         left: $twocolumn-menu-iconview-width;
+        width: $twocolumn-menu-width;
+        padding-bottom: 0;
 
         .menu-link {
-            letter-spacing: .05em;
-            cursor: default;
-            font-size: 11px;
-            text-transform: uppercase;
             color: $vertical-menu-title-color !important;
             font-weight: $font-weight-semibold;
+            font-size: 11px;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            cursor: default;
 
-            &:after {
+            &::after {
                 display: none !important;
             }
 
@@ -30,7 +49,7 @@
             @media (max-width: 767.98px) {
                 padding-top: 16px;
             }
-            
+
             > li:not(.twocolumn-item-show) {
                 display: none;
             }
@@ -46,6 +65,7 @@
                 .menu-dropdown{
                     .row{
                         margin: 0;
+
                         .col-lg-4{
                             width: 100%;
                             padding: 0;
@@ -57,7 +77,7 @@
             .nav-sm{
                 .nav-link{
                     color: $vertical-menu-item-color;
-                    
+
                     &.active{
                         color: $vertical-menu-item-active-color;
                     }
@@ -78,18 +98,20 @@
     }
 
     .twocolumn-iconview {
-        width: $twocolumn-menu-iconview-width;
-        background-color: $twocolumn-menu-iconview-bg;
-        height: 100%;
-        left: -$twocolumn-menu-iconview-width;
-        box-shadow: $twocolumn-menu-box-shadow;
-        top: 0;
         position: absolute;
+        top: 0;
+        left: -$twocolumn-menu-iconview-width;
+        width: $twocolumn-menu-iconview-width;
+        height: 100%;
         padding: 0;
+        background-color: $twocolumn-menu-iconview-bg;
+        box-shadow: $twocolumn-menu-box-shadow;
         text-align: center;
+
         li{
             position: relative;
             list-style: none;
+
             .nav-icon{
                 &::after{
                     content: "";
@@ -103,18 +125,18 @@
         }
 
         .nav-icon {
-            width: 42px;
-            height: 42px;
-            line-height: 42px;
-            color: $vertical-menu-item-color;
             z-index: 1;
-            font-size: 22px;
-            text-align: center;
-            border-radius: 3px;
-            margin: 5px 0;
             display: inline-flex;
             justify-content: center;
             align-items: center;
+            width: 42px;
+            height: 42px;
+            margin: 5px 0;
+            border-radius: 3px;
+            color: $vertical-menu-item-color;
+            font-size: 22px;
+            line-height: 42px;
+            text-align: center;
 
             .icon-dual {
                 width: 18px;
@@ -137,19 +159,6 @@
         display: none;
     }
 
-    @media (max-width: 991.98px) {
-        .logo {
-    
-            span.logo-lg {
-                display: block;
-            }
-    
-            span.logo-sm {
-                display: none;
-            }
-        }
-    }
-
     &[data-sidebar="light"]{
         .app-menu{
             .navbar-brand-box{
@@ -167,18 +176,21 @@
     &[data-sidebar="dark"]{
         .twocolumn-iconview{
             background-color: $twocolumn-menu-iconview-bg-dark;
+
             .nav-icon{
                 color: $twocolumn-menu-item-color-dark;
+
                 &.active{
-                    color: $twocolumn-menu-item-active-color-dark;
                     background-color: $twocolumn-menu-item-active-bg-dark;
+                    color: $twocolumn-menu-item-active-color-dark;
                 }
             }
         }
 
         .app-menu{
-            background-color: $twocolumn-menu-bg-dark;
             border-right-color: $twocolumn-menu-border-dark;
+            background-color: $twocolumn-menu-bg-dark;
+
             .navbar-brand-box{
                 .logo-light{
                     display: block;
@@ -204,18 +216,22 @@
                     .nav-link{
                         &:hover, &.active{
                             color: $twocolumn-menu-item-active-color-dark;
+
                             &::before{
                                 background-color: $twocolumn-menu-item-active-color-dark !important;
                             }
                         }
                     }
                 }
+
                 .nav-link {
                     &[data-bs-toggle=collapse][aria-expanded=true]{
                         color: $twocolumn-menu-item-active-color-dark;
-                        &:before{
+
+                        &::before{
                             background-color: $twocolumn-menu-item-active-color-dark;
                         }
+
                         &::after{
                             color: $twocolumn-menu-item-active-color-dark !important;
                         }
@@ -228,31 +244,31 @@
     &[data-sidebar="gradient"], &[data-sidebar="gradient-2"], &[data-sidebar="gradient-3"], &[data-sidebar="gradient-4"] {
         .twocolumn-iconview {
             background-color: $twocolumn-menu-iconview-bg-dark;
-    
+
             .nav-icon {
                 color: $twocolumn-menu-item-color-gradient;
-    
+
                 &.active {
-                    color: $twocolumn-menu-item-active-color-dark;
                     background-color: $twocolumn-menu-item-active-bg-dark;
+                    color: $twocolumn-menu-item-active-color-dark;
                 }
             }
         }
-    
+
         .app-menu {
-            background-color: $twocolumn-menu-bg-dark;
             border-right-color: $twocolumn-menu-border-dark;
-    
+            background-color: $twocolumn-menu-bg-dark;
+
             .navbar-brand-box {
                 .logo-light {
                     display: block;
                 }
-    
+
                 .logo-dark {
                     display: none;
                 }
             }
-    
+
             .navbar-nav {
                 .nav-sm {
                     .nav-link {
@@ -261,31 +277,30 @@
                 }
             }
         }
-    
+
         .navbar-menu {
             .navbar-nav {
                 .nav-sm {
                     .nav-link {
-    
                         &:hover,
                         &.active {
                             color: $twocolumn-menu-item-active-color-dark;
-    
+
                             &::before {
                                 background-color: $twocolumn-menu-item-active-color-dark !important;
                             }
                         }
                     }
                 }
-    
+
                 .nav-link {
                     &[data-bs-toggle=collapse][aria-expanded=true] {
                         color: $twocolumn-menu-item-active-color-dark;
-    
-                        &:before {
+
+                        &::before {
                             background-color: $twocolumn-menu-item-active-color-dark;
                         }
-    
+
                         &::after {
                             color: $twocolumn-menu-item-active-color-dark !important;
                         }
@@ -296,12 +311,23 @@
     }
 
     .twocolumn-panel{
+        @media (max-width: 575.98px) {
+            .main-content{
+                margin-left: 0;
+            }
+
+            #page-topbar, .footer{
+                left: 0;
+            }
+        }
+
         .app-menu {
             width:0;
             @media (max-width: 575.98px) {
                 display: none;
             }
         }
+
         .navbar-brand-box, .navbar-nav {
             display: none;
         }
@@ -313,30 +339,12 @@
         #page-topbar, .footer{
             left: $twocolumn-menu-iconview-width;
         }
-        @media (max-width: 575.98px) {
-            .main-content{
-                margin-left: 0;
-            }
-    
-            #page-topbar, .footer{
-                left: 0;
-            }
-        }
-        
+
     }
 
     #page-topbar, .footer{
         @media (max-width: 767.98px){
             left: $twocolumn-menu-iconview-width;
-        }
-    }
-    @media (max-width: 575.98px) {
-        .main-content{
-            margin-left: 0;
-        }
-
-        #page-topbar, .footer{
-            left: 0;
         }
     }
 }

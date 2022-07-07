@@ -1,6 +1,6 @@
-//
+
 // _ckeditor.scss
-//
+
 
 .ck {
     font-family: $font-family-base !important;
@@ -8,6 +8,7 @@
     &.ck-reset_all, &.ck-reset_all *{
         color: var(--#{$variable-prefix}body-color) !important;
     }
+
     &.ck-toolbar{
         background: #{rgba(var(--#{$variable-prefix}light-rgb), .75)} !important;
     }
@@ -29,19 +30,19 @@
     }
 
     &.ck-editor__main>.ck-editor__editable {
+        border-color: $input-border-color !important;
         border-top: 0 !important;
         background-color: $card-bg !important;
-        border-color: $input-border-color !important;
         box-shadow: none !important;
     }
 
     &.ck-dropdown__panel{
+        border-radius: $dropdown-border-radius;
         background: $dropdown-bg !important;
         box-shadow: $box-shadow-lg;
         animation-name: DropDownSlide;
         animation-duration: .3s;
         animation-fill-mode: both;
-        border-radius: $dropdown-border-radius;
     }
 
     &.ck-list {
@@ -52,8 +53,8 @@
         .ck-dropdown__panel {
             &.ck-dropdown__panel_ne,
             &.ck-dropdown__panel_se {
-                left: 0;
                 right: auto !important;
+                left: 0;
             }
         }
     }
@@ -65,18 +66,17 @@
     }
 
     &.ck-dropdown__panel {
-        box-shadow: $dropdown-box-shadow !important;
-        border-radius: $dropdown-border-radius !important;
         border: 1px solid $dropdown-border-color !important;
+        border-radius: $dropdown-border-radius !important;
+        box-shadow: $dropdown-box-shadow !important;
     }
 }
 
-.ck.ck-button, 
+.ck.ck-button,
 a.ck.ck-button{
-
     &:focus, &:active{
-        box-shadow: none !important;
         border: 1px solid var(--#{$variable-prefix}light) !important;
+        box-shadow: none !important;
     }
 
     &:not(.ck-disabled){
@@ -90,14 +90,14 @@ a.ck.ck-button{
     }
 }
 
-.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar, 
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
 .ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners{
     border-radius: $border-radius !important;
-    border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
 }
 
-.ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, 
+.ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable,
 .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners{
     border-radius: $border-radius !important;
     border-top-left-radius: 0 !important;
@@ -133,8 +133,9 @@ a.ck {
     }
 
     &.ck-input-text{
-        background: $input-bg !important;
         border: 1px solid $input-border-color !important;
+        background: $input-bg !important;
+
         &:focus{
             border: 1px solid $input-focus-border-color !important;
             box-shadow: none !important;
@@ -142,11 +143,11 @@ a.ck {
     }
 
     &.ck-balloon-panel{
-        background: $dropdown-bg !important;
         border: 1px solid $dropdown-border-color !important;
+        background: $dropdown-bg !important;
 
         &[class*=arrow_n]{
-            &:after{
+            &::after{
                 border-bottom-color: $dropdown-bg !important;
             }
 
@@ -170,22 +171,22 @@ a.ck {
       display: flex;
       flex-direction: column-reverse;
     }
-  
+
     .ck{
       &.ck-editor__main>.ck-editor__editable{
         border: 1px solid $input-border-color !important;
         border-bottom: 0 !important;
       }
     }
-  
-    .ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, 
+
+    .ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable,
     .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners{
       border-radius: $border-radius !important;
-      border-bottom-left-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
     }
-  
-    .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar, 
+
+    .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
     .ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners{
       border-radius: $border-radius !important;
       border-top-left-radius: 0 !important;

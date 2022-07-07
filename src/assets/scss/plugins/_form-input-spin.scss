@@ -1,31 +1,32 @@
-//
+
 // _form-input-spin.scss
-//
+
 
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
     height: auto;
+    appearance: none;
 }
 
 .input-step {
-    border: 1px solid $input-border-color;
+    @include border-radius($input-border-radius, 0);
+
     display: inline-flex;
     overflow: visible;
     height: 37.5px;
-    @include border-radius($input-border-radius, 0);
-    background: $input-bg;
     padding: 4px;
+    border: 1px solid $input-border-color;
+    background: $input-bg;
 
     input {
         width: 4em;
         height: 100%;
-        text-align: center;
         border: 0;
+        border-radius: $input-border-radius;
         background: transparent;
         color: $input-color;
-        border-radius: $input-border-radius;
+        text-align: center;
 
         &:focus-visible {
             outline: 0;
@@ -34,15 +35,15 @@
 
     button {
         width: 1.4em;
-        font-weight: 300;
         height: 100%;
-        line-height: 0.1em;
-        font-size: 1.4em;
         padding: 0.2em !important;
-        background: var(--#{$variable-prefix}light);
-        color: var(--#{$variable-prefix}body-color);
         border: none;
         border-radius: $btn-border-radius;
+        background: var(--#{$variable-prefix}light);
+        color: var(--#{$variable-prefix}body-color);
+        font-weight: 300;
+        font-size: 1.4em;
+        line-height: 0.1em;
     }
 
     &.light {

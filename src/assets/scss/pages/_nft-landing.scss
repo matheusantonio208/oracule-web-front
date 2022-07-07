@@ -1,13 +1,14 @@
-//
+
 // _nft-landing.scss
-//
+
 
 .bookmark-icon {
     .btn {
-        color: $text-muted;
         background-color: $light;
+        color: $text-muted;
         box-shadow: $box-shadow;
         font-size: $font-size-base;
+
         &:hover,
         &.active {
             color: $danger;
@@ -16,73 +17,78 @@
 }
 
 .explore-box {
-    border-radius: 9px;
     overflow: hidden;
+    border-radius: 9px;
+
     .explore-img {
-        height: 280px;
         object-fit: cover;
+        height: 280px;
     }
+
     .explore-place-bid-img {
         position: relative;
-        overflow: hidden;
         z-index: 0;
+        overflow: hidden;
+
         .bg-overlay {
             position: absolute;
-            right: 0;
-            left: 0;
             top: 0;
+            right: 0;
             bottom: 0;
+            left: 0;
             background-color: rgba($dark, 0.4);
             opacity: 0;
             transition: all 0.5s ease;
         }
-    
+
         .place-bid-btn {
-            top: 50%;
             position: absolute;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-    
+
             .btn {
-                opacity: 0;
                 bottom: -25px;
+                opacity: 0;
                 transition: 0.5s ease;
             }
         }
     }
-    
+
     &:hover {
         .explore-place-bid-img {
             .place-bid-btn {
                 .btn {
-                    opacity: 1;
                     bottom: 0;
+                    opacity: 1;
                 }
             }
-    
+
             .bg-overlay {
                 opacity: 1;
             }
         }
     }
+
     .discount-time {
         position: absolute;
+        right: 0;
         bottom: 0;
         left: 0;
-        right: 0;
-        text-align: center;
-        background-color: rgba($white, 0.4);
-        backdrop-filter: blur(5px);
         padding: 8px;
+        background-color: rgba($white, 0.4);
+        text-align: center;
+        backdrop-filter: blur(5px);
     }
 }
 
-//
+
 .nft-hero {
+    padding: 222px 0 150px;
     background-image: url('../../images/nft/bg-home.jpg');
-    background-size: cover;
     background-position: bottom;
-    padding: 222px 0 150px 0;
+    background-size: cover;
+
     .bg-overlay {
         background-color: #05175f;
         opacity: 0.85;

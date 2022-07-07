@@ -1,31 +1,35 @@
-//
+
 // _form-control.scss
-//
+
 
 
 .form-icon{
     position: relative;
+
     .form-control-icon {
-        padding-left: $input-padding-x*3;
         position: relative;
+        padding-left: $input-padding-x*3;
     }
+
     i {
         position: absolute;
-        top: 0px;
-        bottom: 0px;
+        top: 0;
+        bottom: 0;
         left: 18px;
         display: flex;
         align-items: center;
     }
+
     &.right{
         .form-control-icon {
+            position: relative;
             padding-right: $input-padding-x*3;
             padding-left: $input-padding-x;
-            position: relative;
         }
+
         i {
-            left: auto;
             right: 18px;
+            left: auto;
         }
     }
 }

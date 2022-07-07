@@ -1,6 +1,6 @@
-//
+
 // filepond
-//
+
 
 .filepond--root{
   margin-bottom: 0;
@@ -19,6 +19,7 @@
 
 .filepond--drop-label {
   color: var(--#{$variable-prefix}body-color);
+
   label{
     font-weight: $font-weight-medium;
   }

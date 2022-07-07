@@ -1,7 +1,3 @@
-// 
-// _nav.scss
-// 
-
 .nav-tabs,
 .nav-pills {
     >li {
@@ -30,30 +26,36 @@
 
     .nav-item {
         position: relative;
+
         .nav-link {
             border: none;
             font-weight: $font-weight-medium;
+
             &::after {
                 content: "";
-                background: $primary;
-                height: 1px;
                 position: absolute;
-                width: 100%;
-                left: 0;
                 bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: $primary;
                 transition: all 250ms ease 0s;
                 transform: scale(0);
             }
+
             &.active {
                 color: $primary;
-                &:after {
+
+                &::after {
                     transform: scale(1);
                 }
             }
         }
     }
+
     &.card-header-tabs {
         margin-top: -1rem;
+
         .nav-link {
             padding: $card-cap-padding-y $card-cap-padding-x;
         }
@@ -65,9 +67,9 @@
 .vertical-nav {
     .nav {
         .nav-link {
+            margin-bottom: 8px;
             padding: 24px 16px;
             text-align: center;
-            margin-bottom: 8px;
 
             .nav-icon {
                 font-size: 24px;
@@ -77,12 +79,12 @@
 }
 
 
-//Navtab custom
+// Navtab custom
 .navtab-bg {
     li {
         >a {
-            background-color: $gray-300;
             margin: 0 5px;
+            background-color: $gray-300;
         }
     }
 }
@@ -95,18 +97,19 @@
             position: relative;
             text-align: center;
 
-            &:before {
+            &::before {
+                @include transition($nav-link-transition);
+
                 content: "";
                 position: absolute;
-                border: 6px solid transparent;
                 bottom: -12px;
                 left: 50%;
+                border: 6px solid transparent;
                 transform: translateX(-50%);
-                @include transition($nav-link-transition);
             }
 
             &.active {
-                &:before {
+                &::before {
                     border-top-color: $primary;
                 }
             }
@@ -117,42 +120,51 @@
 // custom hover tab
 .custom-hover-nav-tabs {
     .nav-item {
-        text-align: center;
         overflow: hidden;
+        text-align: center;
+
         .nav-link {
+            position: relative;
             width: 120px;
             height: 45px;
-            position: relative;
-            border-radius: 0px;
+            border-radius: 0;
+
             .nav-icon {
                 font-size: 22px;
             }
+
             .nav-titl {
                 font-size: 14px;
             }
+
             &.active {
                 .nav-tab-position {
                     color: $white;
                 }
             }
+
             .nav-tab-position {
                 position: absolute;
-                left: 0;
                 right: 0;
+                left: 0;
                 transition: all 0.4s;
+
                 &.nav-icon {
                     top: 50%;
                     transform: translateY(-50%);
                 }
+
                 &.nav-titl {
                     bottom: -20px;
                 }
             }
+
             &:hover {
                 .nav-titl {
                     bottom: 50%;
                     transform: translateY(50%);
                 }
+
                 .nav-icon {
                     top: -20px;
                 }
@@ -166,20 +178,20 @@
 
 .custom-verti-nav-pills {
     .nav-link {
-        background-color: var(--#{$variable-prefix}light);
-        margin-top: 7px;
         position: relative;
+        margin-top: 7px;
+        background-color: var(--#{$variable-prefix}light);
 
         @media (min-width: 992px) {
             &::before {
                 content: "";
                 position: absolute;
-                right: -20px;
                 top: 50%;
-                transform: translateY(-50%);
+                right: -20px;
                 border: 12px solid transparent;
                 border-left-color: transparent;
                 transition: border-left-color .04 ease;
+                transform: translateY(-50%);
             }
 
             &.active {
@@ -197,12 +209,12 @@
         position: relative;
 
         a {
-            color: var(--#{$variable-prefix}body-color);
-            border-radius: 4px;
             position: relative;
-            overflow: hidden;
-            transition: all 0.4s;
             z-index: 1;
+            overflow: hidden;
+            border-radius: 4px;
+            color: var(--#{$variable-prefix}body-color);
+            transition: all 0.4s;
 
             span {
                 position: relative;
@@ -212,22 +224,22 @@
                 content: '';
                 position: absolute;
                 top: 0;
-                width: 0;
                 right: 0;
-                height: 100%;
-                transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
-                background-color: $primary;
                 z-index: -1;
+                width: 0;
+                height: 100%;
+                background-color: $primary;
+                transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
             }
 
             &:hover,
             &.active {
-                color: $white;
                 background-color: transparent !important;
+                color: $white;
 
                 &::before {
-                    width: 100%;
                     left: 0;
+                    width: 100%;
                 }
             }
         }
@@ -250,24 +262,24 @@ $value in $theme-colors {
     .nav-border-top-#{$color} {
         .nav-link {
             &.active {
-                color: $value;
                 border-top-color: $value;
+                color: $value;
             }
         }
     }
 }
 
 .nav-custom {
-    background-color: $primary;
     border-radius: $card-border-radius;
+    background-color: $primary;
 
     .nav-item {
         .nav-link {
             color: rgba($white, 0.75);
 
             &.active {
-                color: $white;
                 background-color: rgba($white, 0.1);
+                color: $white;
             }
         }
     }
@@ -275,11 +287,11 @@ $value in $theme-colors {
     &.nav-custom-light {
         .nav-item {
             .nav-link {
-                color: rgba(var(--#{$variable-prefix}dark-rgb), 0.75);
+                color: rgb(var(--#{$variable-prefix}dark-rgb) 0.75);
 
                 &.active {
-                    color: $light;
                     background-color: $primary;
+                    color: $light;
                 }
             }
         }
@@ -303,16 +315,16 @@ $value in $theme-colors {
     .nav-#{$color} {
         .nav-link {
             &.active {
-                color: $white;
                 background-color: $value;
+                color: $white;
             }
         }
 
         &.nav-tabs{
             .nav-link {
-                &.active { 
-                    color: $value;
+                &.active {
                     background-color: $card-bg;
+                    color: $value;
                 }
             }
         }
@@ -320,8 +332,8 @@ $value in $theme-colors {
         &.nav-tabs-custom {
             .nav-link {
                 &.active {
-                    color: $value;
                     background-color: $card-bg;
+                    color: $value;
 
                     &::after {
                         background-color: $value;
@@ -357,24 +369,28 @@ $value in $theme-colors {
     position: relative;
     margin-right: 1rem;
     margin-left: 1rem;
+
     .progress{
         position: absolute;
-        left: 0;
         top: 50%;
-        transform: translateY(-50%);
+        left: 0;
         width: 100%;
+        transform: translateY(-50%);
     }
+
     .nav{
+        justify-content: space-between;
         margin-right: -1rem;
         margin-left: -1rem;
-        justify-content: space-between;
+
         .nav-link{
             width: 2rem;
             height: 2rem;
-            background-color: var(--#{$variable-prefix}light);
             padding: 0;
+            background-color: var(--#{$variable-prefix}light);
             color: var(--#{$variable-prefix}dark);
             font-weight: $font-weight-medium;
+
             &.active, &.done{
                 background-color: $primary;
                 color: $white;
@@ -382,43 +398,51 @@ $value in $theme-colors {
         }
     }
 }
+
 // Step arrow nav
 .step-arrow-nav{
     .nav{
         background-color: var(--#{$variable-prefix}light);
+
         .nav-link{
-            border-radius: 0;
             position: relative;
-            font-weight: $font-weight-medium;
+            border-radius: 0;
             color: var(--#{$variable-prefix}dark);
+            font-weight: $font-weight-medium;
+
             &::before{
                 content: "";
                 position: absolute;
-                border: 7px solid transparent;
-                right: -14px;
                 top: 50%;
+                right: -14px;
+                border: 7px solid transparent;
                 transform: translateY(-50%);
             }
+
             &.done{
                 background-color: rgba($primary, 0.05);
                 color: $primary;
+
                 &::before{
                     border-left-color: transparent;
                 }
             }
+
             &.active{
                 background-color: rgba($primary, 0.1);
                 color: $primary;
                 box-shadow: none;
+
                 &::before{
                     border-left-color: rgba($primary, 0.1);
                 }
             }
         }
+
         .nav-item{
             &:last-child{
                 .nav-link{
-                    &:before{
+                    &::before{
                         display: none;
                     }
                 }
@@ -426,35 +450,43 @@ $value in $theme-colors {
         }
     }
 }
+
 // vertical nav step
 .vertical-navs-step{
     .nav{
         gap: 16px;
+
         .nav-link{
-            text-align: left;
-            background-color: rgba(var(--#{$variable-prefix}light-rgb), 0.4);
             border: 1px solid var(--#{$variable-prefix}border-color);
+            background-color: rgb(var(--#{$variable-prefix}light-rgb) 0.4);
             color: var(--#{$variable-prefix}dark);
+            text-align: left;
+
             .step-title{
                 font-weight: $font-weight-semibold;
             }
+
             .step-icon{
-                color: $danger;
                 vertical-align: middle;
-                font-weight: $font-weight-medium;
                 float: left;
+                color: $danger;
+                font-weight: $font-weight-medium;
             }
+
             &.active, &.done{
                 .step-icon{
                     color: $success;
-                    &:before{
+
+                    &::before{
                         content: "\eb80";
                     }
                 }
             }
+
             &.active{
                 border-color: $primary;
             }
+
             &.done{
                 border-color: $success;
             }
@@ -462,7 +494,7 @@ $value in $theme-colors {
     }
 }
 
-//Outline Border Nav
+// Outline Border Nav
 .nav-custom-outline {
     &.nav {
         .nav-link {
@@ -484,55 +516,55 @@ $value in $theme-colors {
         &.nav-custom-outline {
             .nav-link {
                 &.active {
-                    color: $value;
                     border-color: $value;
+                    color: $value;
                 }
             }
         }
     }
 }
 
-//customs nav
+// customs nav
 .nav-customs {
     &.nav {
-        padding-left: 34px;
         overflow: hidden;
+        padding-left: 34px;
 
         .nav-link {
             position: relative;
             display: block;
             float: right;
-            background-color: var(--#{$variable-prefix}body-bg);
             margin-right: 46px;
+            background-color: var(--#{$variable-prefix}body-bg);
             transition: all 0.5s ease;
 
             &::before,
             &::after {
-                display: block;
                 content: " ";
                 position: absolute;
                 top: -1px;
                 bottom: -1px;
+                display: block;
                 width: 37px;
                 background-color: var(--#{$variable-prefix}body-bg);
                 transition: all 0.5s ease;
             }
 
             &::before {
-                border-radius: 0 8px 0 0;
                 right: -24px;
+                border-radius: 0 8px 0 0;
                 transform: skew(30deg, 0deg);
             }
 
             &::after {
-                border-radius: 8px 0 0 0;
                 left: -24px;
+                border-radius: 8px 0 0;
                 transform: skew(-30deg, 0deg);
             }
 
             &.active,
-            &.active:before,
-            &.active:after {
+            &.active::before,
+            &.active::after {
                 background-color: $primary;
                 color: $white;
             }

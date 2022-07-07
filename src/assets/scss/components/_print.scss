@@ -1,6 +1,6 @@
-// 
+
 // print.scss
-//
+
 
 // Used invoice page
 @media print {
@@ -13,13 +13,14 @@
   #back-to-top {
       display: none !important;
   }
+
   .card-body,
   .main-content,
   .right-bar,
   .page-content,
   body {
-      padding: 0;
       margin: 0;
+      padding: 0;
   }
 
   .card{
@@ -32,6 +33,7 @@
           display: flex !important;
       }
   }
+
   .address{
       &.col-sm-6 {
           flex: 0 0 auto !important;

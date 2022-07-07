@@ -1,7 +1,3 @@
-// 
-// tour.scss
-// 
-
 .shepherd-element{
     background: $card-bg;
     box-shadow: $box-shadow;
@@ -10,33 +6,34 @@
 .shepherd-has-title{
     .shepherd-content{
         .shepherd-header{
-            background-color: var(--#{$variable-prefix}light);
             padding: $toast-padding-y $toast-padding-x;
+            background-color: var(--#{$variable-prefix}light);
         }
 
         .shepherd-cancel-icon{
-            color: rgba(var(--#{$variable-prefix}dark-rgb), .75);
+            color: rgb(var(--#{$variable-prefix}dark-rgb) .75);
+
             &:hover{
-                color: rgba(var(--#{$variable-prefix}dark-rgb), .75);
+                color: rgb(var(--#{$variable-prefix}dark-rgb) .75);
             }
         }
     }
 }
 
-.shepherd-element.shepherd-has-title[data-popper-placement^=bottom]>.shepherd-arrow:before{
+.shepherd-element.shepherd-has-title[data-popper-placement^=bottom]>.shepherd-arrow::before{
     background-color: var(--#{$variable-prefix}light);
 }
 
 .shepherd-title{
-    font-size: 15px;
-    font-weight: $font-weight-medium;
     color: var(--#{$variable-prefix}body-color);
+    font-weight: $font-weight-medium;
+    font-size: 15px;
 }
 
 .shepherd-text{
     padding: $toast-padding-x;
-    font-size: $font-size-base;
     color: var(--#{$variable-prefix}body-color);
+    font-size: $font-size-base;
 }
 
 .shepherd-button{
@@ -46,7 +43,7 @@
     }
 
     &.btn-light:not(:disabled):hover{
-        background: rgba(var(--#{$variable-prefix}light-rgb), .75);
+        background: rgb(var(--#{$variable-prefix}light-rgb) .75);
         color: var(--#{$variable-prefix}dark);
     }
 
@@ -59,15 +56,16 @@
 .shepherd-footer{
     padding: 0 $toast-padding-x $toast-padding-x;
 }
+
 .shepherd-arrow,
-.shepherd-arrow:before{
+.shepherd-arrow::before{
     content: "\ea75";
-    font-family: 'remixicon';
-    font-size: 24px;
     z-index: 1;
     background-color: transparent !important;
-    transform: rotate(0deg);
     color: $primary;
+    font-size: 24px;
+    font-family: remixicon;
+    transform: rotate(0deg);
 }
 
 .shepherd-element[data-popper-placement^=bottom]>.shepherd-arrow{

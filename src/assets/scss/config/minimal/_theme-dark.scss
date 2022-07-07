@@ -2,7 +2,6 @@
 
 
 [data-layout-mode="dark"]{
-
   // Color system - Dark Mode only
   $gray-100: #1a1d21;
   $gray-200: #212529;
@@ -13,7 +12,6 @@
   $gray-700: #ced4da;
   $gray-800: #eff2f7;
   $gray-900: #f3f6f9;
-
   $grays: (
       "100": $gray-100,
       "200": $gray-200,
@@ -26,18 +24,13 @@
       "900": $gray-900
   );
 
-  // Prefix for :root CSS variables
-  @each $color, $value in $grays {
-      --#{$variable-prefix}gray-#{$color}: #{$value};
-  }
-
   // body
   --#{$variable-prefix}body-bg :  #{$gray-100};
   --#{$variable-prefix}body-color: #{$gray-700};
   --#{$variable-prefix}body-color-rgb: #{to-rgb($gray-700)};
-  
 
-  //vertical light
+
+  // vertical light
   --#{$variable-prefix}vertical-menu-bg:                      #{$white};
   --#{$variable-prefix}vertical-menu-item-color:              #{darken($gray-400, 16%)};
   --#{$variable-prefix}vertical-menu-item-hover-color:        #{$primary};
@@ -47,7 +40,7 @@
   --#{$variable-prefix}vertical-menu-sub-item-active-color:   #{$primary};
   --#{$variable-prefix}vertical-menu-title-color:             #{$gray-400};
 
-  //vertical dark
+  // vertical dark
   --#{$variable-prefix}vertical-menu-bg-dark:                 #{darken($gray-200, 5%)};
   --#{$variable-prefix}vertical-menu-item-color-dark:         #9aaab3;
   --#{$variable-prefix}vertical-menu-item-hover-color-dark:     #{$white};
@@ -60,17 +53,19 @@
   // Topbar - (Default Light)
   --#{$variable-prefix}header-bg:  #292e32;
   --#{$variable-prefix}header-item-color:  #e9ecef;
+
   // Topbar - Dark
   --#{$variable-prefix}header-bg-dark:  #{$gray-300};
   --#{$variable-prefix}header-item-color-dark:  #b0c4d9;
 
   // Topbar Search
   --#{$variable-prefix}topbar-search-bg: #{darken($gray-200, 3%)};
+
   // Topbar User
   --#{$variable-prefix}topbar-user-bg: #{lighten($gray-300, 1%)};
   --#{$variable-prefix}topbar-user-bg-dark: #{$gray-200};
 
-  //footer
+  // footer
   --#{$variable-prefix}footer-bg: #{$gray-200};
   --#{$variable-prefix}footer-color: #{$gray-400};
 
@@ -82,7 +77,7 @@
   // twocolumn menu
   --#{$variable-prefix}twocolumn-menu-iconview-bg: #{$white};
   --#{$variable-prefix}twocolumn-menu-bg:  #{$white};
-    
+
   // two column dark
   --#{$variable-prefix}twocolumn-menu-iconview-bg-dark: var(--#{$variable-prefix}vertical-menu-bg-dark);
   --#{$variable-prefix}twocolumn-menu-bg-dark:  #{lighten($gray-200, 1%)};
@@ -90,7 +85,7 @@
   --#{$variable-prefix}twocolumn-menu-item-active-color-dark:  #{$white};
   --#{$variable-prefix}twocolumn-menu-item-active-bg-dark:  #{rgba($white, .15)};
 
-  // boxed 
+  // boxed
   --#{$variable-prefix}boxed-body-bg: #{darken($gray-100, 4%)};
 
   // heading-color
@@ -140,7 +135,7 @@
   --#{$variable-prefix}toast-border-color: #{rgba($white, .1)};
   --#{$variable-prefix}toast-header-border-color: #{rgba($white, .05)};
 
-  //list
+  // list
   --#{$variable-prefix}list-group-hover-bg: #{lighten($gray-200, 2.5%)};
 
   // popover
@@ -149,7 +144,7 @@
   // pagination
   --#{$variable-prefix}pagination-hover-bg: #{lighten($gray-200, 4%)};
 
-  //form
+  // form
   --#{$variable-prefix}input-bg: #{lighten($gray-200, 2%)};
   --#{$variable-prefix}input-border: #{$gray-300};
   --#{$variable-prefix}input-focus-border: #{lighten($gray-300, 4%)};
@@ -158,30 +153,35 @@
   // input-group-addon
   --#{$variable-prefix}input-group-addon-bg: #{$gray-300};
 
-  //check
+  // check
   --#{$variable-prefix}input-check-border:  #{lighten($gray-300, 4%)};
+
+  // Prefix for :root CSS variables
+  @each $color, $value in $grays {
+      --#{$variable-prefix}gray-#{$color}: #{$value};
+  }
 }
 
-//sidebar color
-[data-sidebar="gradient"] { 
+// sidebar color
+[data-sidebar="gradient"] {
   --#{$variable-prefix}vertical-menu-bg-gradient: linear-gradient(to right, var(--#{$variable-prefix}primary), var(--#{$variable-prefix}success));
   --#{$variable-prefix}vertical-menu-border-gradient: var(--#{$variable-prefix}success);
   --#{$variable-prefix}twocolumn-menu-bg-dark: var(--#{$variable-prefix}success);
 }
 
-[data-sidebar="gradient-2"] { 
+[data-sidebar="gradient-2"] {
   --#{$variable-prefix}vertical-menu-bg-gradient: linear-gradient(to right, var(--#{$variable-prefix}info), var(--#{$variable-prefix}secondary));
   --#{$variable-prefix}vertical-menu-border-gradient: var(--#{$variable-prefix}secondary);
   --#{$variable-prefix}twocolumn-menu-bg-dark: var(--#{$variable-prefix}secondary);
 }
 
-[data-sidebar="gradient-3"] { 
+[data-sidebar="gradient-3"] {
   --#{$variable-prefix}vertical-menu-bg-gradient: linear-gradient(to right, var(--#{$variable-prefix}info), var(--#{$variable-prefix}success));
   --#{$variable-prefix}vertical-menu-border-gradient: var(--#{$variable-prefix}success);
   --#{$variable-prefix}twocolumn-menu-bg-dark: var(--#{$variable-prefix}success);
 }
 
-[data-sidebar="gradient-4"] { 
+[data-sidebar="gradient-4"] {
   --#{$variable-prefix}vertical-menu-bg-gradient: linear-gradient(to right, var(--#{$variable-prefix}dark), var(--#{$variable-prefix}primary));
   --#{$variable-prefix}vertical-menu-border-gradient: var(--#{$variable-prefix}primary);
   --#{$variable-prefix}twocolumn-menu-bg-dark: var(--#{$variable-prefix}primary);

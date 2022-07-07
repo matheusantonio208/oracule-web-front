@@ -8,36 +8,45 @@ File: Custom Css File
 
 .css-b62m3t-container {
   .css-1s2u09g-control {
-    background-color: $card-bg;
     border-color: $border-color;
+    background-color: $card-bg;
+
     &:hover {
       border-color: $border-color;
     }
   }
+
   .css-1pahdxg-control {
-    background-color: $card-bg;
     border-color: $border-color;
+    background-color: $card-bg;
     box-shadow: none;
+
     &:hover {
       border-color: $border-color !important;
     }
   }
+
   .css-26l3qy-menu {
     background-color: $dropdown-bg;
+
     .css-1n7v3ny-option {
-      cursor: pointer;
       background-color: $dropdown-link-hover-bg;
+      cursor: pointer;
+
       &:active {
         background-color: $dropdown-link-hover-bg;
       }
     }
   }
+
   .css-1rhbuit-multiValue {
     background-color: var(--#{$variable-prefix}light);
   }
+
   .css-12jo7m5 {
     color: $heading-color;
   }
+
   .css-6j8wv5-Input,
   .css-qc6sy-singleValue {
     color: $heading-color;
@@ -50,19 +59,19 @@ File: Custom Css File
 }
 
 .marquee {
-  width: 100%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  width: 100%;
   height: 22px;
   line-height: 2;
 }
 
 .marquee div {
+  position: absolute;
   display: block;
+  overflow: hidden;
   width: 200%;
   height: 30px;
-  position: absolute;
-  overflow: hidden;
   animation: marquee 35s linear infinite;
 }
 

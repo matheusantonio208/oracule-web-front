@@ -1,46 +1,54 @@
-//
+
 // _kanban.scss
-//
+
 
 .tasks-board {
     display: flex;
-    overflow-x: auto;
     align-items: stretch;
+    overflow-x: auto;
+
     .tasks-list {
         min-width: 300px;
         margin-right: 24px;
     }
+
     &::-webkit-scrollbar {
-        -webkit-appearance: none;
+        appearance: none;
     }
+
     &::-webkit-scrollbar:vertical {
         width: 10px;
     }
+
     &::-webkit-scrollbar:horizontal {
         height: 8px;
     }
+
     &::-webkit-scrollbar-thumb {
-        background-color: rgba(var(--#{$variable-prefix}dark-rgb), .075);
         border-radius: 8px;
+        background-color: rgb(var(--#{$variable-prefix}dark-rgb) .075);
     }
+
     &::-webkit-scrollbar-track {
-        border-radius: 8px;  
+        border-radius: 8px;
     }
 }
 
 .tasks-box{
     .progress {
-        border-radius: 0px 0px $card-border-radius $card-border-radius;
+        border-radius: 0 0 $card-border-radius $card-border-radius;
     }
+
     .tasks-img{
-        height: 135px;
-        width: 100%;
         object-fit: cover;
+        width: 100%;
+        height: 135px;
+        margin: 12px 0;
         object-position: center;
-        margin: 12px 0px;
     }
+
     &:last-child {
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 }
 
@@ -50,21 +58,22 @@
 
 
 .tasks {
-    min-height: 140px;
     position: relative;
+    min-height: 140px;
+
     &::before {
         content: "";
         position: absolute;
-        left: 0;
-        right: 0;
         top: 0;
+        right: 0;
         bottom: 0;
-        height: 180px;
+        left: 0;
         width: 270px;
+        height: 180px;
         margin: 0 auto;
         background-image: url('../../images/file.png');
-        background-size: cover;
         background-position: center;
+        background-size: cover;
     }
 }
 
@@ -73,6 +82,7 @@
         .tasks-list-menu {
             opacity: 0;
         }
+
         &:hover {
             .tasks-list-menu {
                 opacity: 1;

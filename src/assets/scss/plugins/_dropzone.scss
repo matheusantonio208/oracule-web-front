@@ -1,17 +1,17 @@
-//
+
 // Dropzone
-//
+
 
 
 .dropzone {
   min-height: 230px;
   border: 2px dashed $border-color;
-  background: $card-bg;
   border-radius: 6px;
+  background: $card-bg;
 
   .dz-message {
-    font-size: 24px;
     width: 100%;
     margin: 1em 0;
+    font-size: 24px;
   }
 }

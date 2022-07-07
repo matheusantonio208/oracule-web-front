@@ -1,22 +1,15 @@
-// 
-// Widgets.scss
-// 
-
 .main-chart {
     .chart-border-left {
-        border-left: 1.4px solid $border-color;
         padding: 2px 20px;
+        border-left: 1.4px solid $border-color;
 
         &:last-child {
-            margin-right: 0px;
+            margin-right: 0;
         }
     }
 }
 
-
-
 /* Activity */
-
 .activity-feed {
     list-style: none;
 
@@ -26,16 +19,16 @@
         padding-left: 16px;
         border-left: 2px solid $light;
 
-        &:after {
+        &::after {
             content: "";
-            display: block;
             position: absolute;
             top: 4px;
             left: -6px;
+            display: block;
             width: 10px;
             height: 10px;
-            border-radius: 50%;
             border: 2px solid $primary;
+            border-radius: 50%;
             background-color: $card-bg;
         }
 
@@ -50,20 +43,20 @@
     position: relative;
 
     .mini-stat-icon {
-        overflow: hidden;
         position: relative;
+        overflow: hidden;
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             content: "";
             position: absolute;
+            top: -8px;
+            left: 3px;
             width: 8px;
             height: 69px;
             background-color: rgba($success, .1);
-            left: 3px;
-            transform: rotate(32deg);
-            top: -8px;
             transition: all 0.4s;
+            transform: rotate(32deg);
         }
 
         &::after {

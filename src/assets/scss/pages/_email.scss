@@ -1,7 +1,3 @@
-//
-// _email.scss
-//
-
 .email-wrapper {
   position: relative;
   overflow-x: hidden;
@@ -10,8 +6,8 @@
 // chat left sidebar
 
 .email-menu-sidebar {
-  height: calc(100vh - 137px);
   position: relative;
+  height: calc(100vh - 137px);
   background-color: $card-bg;
   transition: all 0.2s;
 
@@ -26,13 +22,13 @@
       top: 0;
       bottom: 0;
       left: 0;
+      z-index: 1003;
       width: 200px;
       max-width: 100%;
-      z-index: 1003;
-      box-shadow: $box-shadow-lg;
-      transform: translateX(-100%);
-      visibility: hidden;
       height: 100vh;
+      box-shadow: $box-shadow-lg;
+      visibility: hidden;
+      transform: translateX(-100%);
 
       &.menubar-show {
           visibility: visible;
@@ -53,8 +49,8 @@
   a {
       display: flex;
       align-items: center;
-      color: $gray-600;
       padding: 5px 0;
+      color: $gray-600;
       font-weight: $font-weight-medium;
 
       &:hover {
@@ -96,8 +92,8 @@
   position: fixed;
   bottom: $footer-height;
   left: 50%;
-  transform: translateX(-50%);
   z-index: 1;
+  transform: translateX(-50%);
 }
 
 .email-detail-content {
@@ -106,17 +102,17 @@
   bottom: 4px;
   left: 68%;
   width: 32%;
-  background-color: $card-bg;
-  transform: translateX(200%);
-  transition: all 0.2s;
-  visibility: hidden;
   border-left: 2px solid var(--#{$variable-prefix}body-bg);
+  background-color: $card-bg;
+  visibility: hidden;
+  transition: all 0.2s;
+  transform: translateX(200%);
 }
 
 .email-detail-show {
   .email-detail-content {
-      transform: none;
       visibility: visible;
+      transform: none;
   }
 
   .email-content {
@@ -146,17 +142,17 @@
 
 .message-list {
   display: block;
-  padding-left: 0;
   margin: 0;
+  padding-left: 0;
 
   li {
       position: relative;
       display: block;
+      clear: both;
       height: 50px;
       line-height: 50px;
       cursor: default;
       transition-duration: .3s;
-      clear: both;
 
       a {
           color: var(--#{$variable-prefix}gray-700);
@@ -168,8 +164,8 @@
       }
 
       .col-mail {
-          float: left;
           position: relative;
+          float: left;
       }
 
       .col-mail-1 {
@@ -183,13 +179,13 @@
           }
 
           .dot {
+              width: 0;
+              height: 0;
+              margin: 22px 26px 0;
               border: 4px solid transparent;
               border-radius: 100px;
-              margin: 22px 26px 0;
-              height: 0;
-              width: 0;
-              line-height: 0;
               font-size: 0;
+              line-height: 0;
           }
 
           .checkbox-wrapper-mail {
@@ -205,12 +201,12 @@
           .title {
               position: absolute;
               top: 0;
-              left: 95px;
               right: 0;
-              text-overflow: ellipsis;
+              left: 95px;
               overflow: hidden;
-              white-space: nowrap;
               margin-bottom: 0;
+              text-overflow: ellipsis;
+              white-space: nowrap;
 
               @media (max-width: 575.98px) {
                   left: 95px;
@@ -221,9 +217,9 @@
       .col-mail-2 {
           position: absolute;
           top: 0;
-          left: 280px;
           right: 0;
           bottom: 0;
+          left: 280px;
 
           .subject,
           .date {
@@ -232,10 +228,10 @@
           }
 
           .subject {
-              left: 0;
               right: 110px;
-              text-overflow: ellipsis;
+              left: 0;
               overflow: hidden;
+              text-overflow: ellipsis;
               white-space: nowrap;
 
               .teaser{
@@ -252,8 +248,8 @@
 
       &.active,
       &.active:hover {
-          box-shadow: inset 3px 0 0 $primary;
           background-color: var(--#{$variable-prefix}light);
+          box-shadow: inset 3px 0 0 $primary;
       }
 
 
@@ -273,14 +269,14 @@
 }
 
 #mailLoader{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center; 
-  position: absolute; 
-  left: 0; 
-  top: 0; 
+  position: absolute;
+  top: 0;
   bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .email-compose-input {
@@ -291,12 +287,12 @@
   .email-detail-content {
       position: fixed;
       top: 0;
+      right: 0;
       bottom: 0;
       left: auto;
-      right: 0;
+      z-index: 1003;
       width: 400px;
       max-width: 100%;
-      z-index: 1003;
       box-shadow: $box-shadow-lg;
       transform: translateX(100%);
   }
@@ -322,20 +318,21 @@
 }
 
 .email-chat-detail{
-  width: 350px;
   position: fixed;
-  max-width: 100%;
-  bottom: $footer-height;
   right: $footer-height;
+  bottom: $footer-height;
   z-index: 9;
   display: none;
-  .card{
-      box-shadow: $box-shadow-lg;
-  }
+  width: 350px;
+  max-width: 100%;
 
   @media (max-width: 515.98px) {
-      left: 16px;
       right: 16px;
+      left: 16px;
+  }
+
+  .card{
+      box-shadow: $box-shadow-lg;
   }
 }
 
@@ -343,8 +340,8 @@
 [data-layout="horizontal"]{
   .email-wrapper{
       @media (min-width: 1025px) {
-          margin-left: 0 !important;
           margin-right: 0 !important;
+          margin-left: 0 !important;
       }
       @media (max-width: 991.98px) {
           margin-top: 0 !important;
@@ -356,6 +353,7 @@
       @media (max-width: 991.98px) {
           height: 100vh
       }
+
       .email-menu-sidebar-scroll{
           height: calc(100vh - 330px);
           @media (max-width: 991.98px) {
@@ -363,10 +361,10 @@
           }
       }
   }
-  
+
   .message-list-content {
       height: calc(100vh - 289px);
-      
+
   }
 
   .email-detail-content-scroll{

@@ -1,49 +1,49 @@
-// 
-// _listjs.scss
-// 
-
 .listjs-pagination{
-    margin-bottom: 0;
-    justify-content: flex-end;
     gap: 8px;
+    justify-content: flex-end;
+    margin-bottom: 0;
+
     li{
         .page{
             display: block;
             padding: $pagination-padding-y $pagination-padding-x;
-            color: $pagination-color;
-            background-color: $pagination-bg;
             border: $pagination-border-width solid $pagination-border-color;
             border-radius: $border-radius;
+            background-color: $pagination-bg;
+            color: $pagination-color;
         }
 
         &.active{
             .page{
-                color: $pagination-active-color;
                 @include gradient-bg($pagination-active-bg);
+
                 border-color: $pagination-active-border-color;
+                color: $pagination-active-color;
             }
         }
     }
 }
 
 .pagination-wrap {
-    user-select: none;
     display: flex;
     align-items: center;
+    user-select: none;
+
     a {
-        text-decoration: none;
         display: inline-block;
+        text-decoration: none;
     }
 }
 
 .pagination-next,
 .pagination-prev {
+    padding: $pagination-padding-y $pagination-padding-x;
+    border: $pagination-border-width solid $pagination-border-color;
+    border-radius: $border-radius;
+    background-color: $pagination-bg;
     color: $primary;
     font-weight: $font-weight-medium;
-    padding: $pagination-padding-y $pagination-padding-x;
-    background-color: $pagination-bg;
-    border: $pagination-border-width solid $pagination-border-color;
-    border-radius: $border-radius; 
+
     &:hover {
         color: lighten($primary, 20%);
     }

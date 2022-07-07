@@ -1,19 +1,19 @@
-// 
+
 // badge.scss
-//
+
 
 // Soft badge
 @mixin badge-variant-soft($bg) {
-    color: $bg;
     background-color: rgba($bg, 0.1);
+    color: $bg;
 }
 
 
 // Outline badge
 @mixin badge-variant-outline($bg) {
-    color: $bg;
     border: 1px solid $bg;
     background-color: transparent;
+    color: $bg;
 }
 
 @each $color, $value in $theme-colors {
@@ -25,8 +25,8 @@
 // badge outline
 
 .badge-outline {
-    background-color: $card-bg;
     border: 1px solid;
+    background-color: $card-bg;
 }
 
 @each $color, $value in $theme-colors {
@@ -42,7 +42,7 @@
 
     .badge-label {
         &.bg-#{$color} {
-            &:before {
+            &::before {
                 border-right-color: $value;
             }
         }
@@ -58,15 +58,16 @@
 // badge-label
 
 .badge-label {
-    margin-left: 8px;
     position: relative;
-    &:before {
+    margin-left: 8px;
+
+    &::before {
         content: "";
         position: absolute;
+        top: 0;
+        left: -14px;
         border: 8px solid transparent;
         border-right-color: $primary;
-        left: -14px;
-        top: 0;
     }
 }
 
@@ -83,7 +84,7 @@
     }
 }
 
-//Badge Gradient Style
+// Badge Gradient Style
 $gradients: ();
 $gradients: map-merge((primary: linear-gradient(135deg, $primary 0%, $success 100%),
         secondary: linear-gradient(135deg, $secondary 0%, $info 100%),

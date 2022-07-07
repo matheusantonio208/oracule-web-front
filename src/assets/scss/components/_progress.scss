@@ -1,7 +1,3 @@
-// 
-// _progress.scss
-// 
-
 // Progress height small
 .progress-sm {
     height: 5px;
@@ -62,12 +58,12 @@
         &::before {
             content: "";
             position: absolute;
+            top: 50%;
+            right: 2px;
             width: 4px;
             height: 4px;
-            background-color: $white;
             border-radius: 7px;
-            right: 2px;
-            top: 50%;
+            background-color: $white;
             transform: translateY(-50%);
 
         }
@@ -86,20 +82,20 @@
             position: absolute;
             top: -25px;
             right: -9px;
-            background-color: $primary;
-            color: $white;
             display: inline-block;
-            line-height: 18px;
             padding: 0 4px;
             border-radius: 4px;
+            background-color: $primary;
+            color: $white;
+            line-height: 18px;
 
-            &:after {
+            &::after {
                 content: "";
                 position: absolute;
-                border: 4px solid transparent;
-                border-top-color: $primary;
                 bottom: -7px;
                 left: 50%;
+                border: 4px solid transparent;
+                border-top-color: $primary;
                 transform: translateX(-50%);
             }
         }
@@ -113,15 +109,16 @@
     .progress-bar {
         position: relative;
         overflow: initial;
-        font-size: .875rem;
         color: $white;
+        font-size: .875rem;
+
         &::after {
             content: "";
             position: absolute;
-            border: 10px solid transparent;
-            bottom: 15px;
             right: -20px;
+            bottom: 15px;
             z-index: 1;
+            border: 10px solid transparent;
         }
     }
 }
@@ -130,13 +127,16 @@
 @mixin progress-variant($bg) {
     .progress-bar {
         background-color: $bg;
-        &::after { 
+
+        &::after {
             border-left-color: $bg;
         }
+
         &:nth-child(2) {
             background-color: rgba($bg, 0.1) !important;
             color: $bg !important;
-            &::after { 
+
+            &::after {
                 border-left-color: rgba($bg, 0.1);
             }
         }

@@ -1,14 +1,9 @@
-
-//
-//  _sweetalert2.scss
-//
-
 .swal2-container {
   .swal2-title{
     padding: 24px 24px 0;
-    font-size: 20px;
     font-weight: $font-weight-medium;
-  }  
+    font-size: 20px;
+  }
 }
 
 .swal2-popup{
@@ -40,6 +35,7 @@
     border-color: $info;
     color: $info;
   }
+
   &.swal2-success {
     [class^=swal2-success-line]{
       background-color: $success;
@@ -49,6 +45,7 @@
       border-color: rgba($success, 0.3);
     }
   }
+
   &.swal2-warning{
     border-color: $warning;
     color: $warning;
@@ -72,13 +69,16 @@
 .swal2-progress-steps {
   .swal2-progress-step{
     background: $primary;
+
     &.swal2-active-progress-step{
       background: $primary;
-      &~.swal2-progress-step, &~.swal2-progress-step-line{
+
+      .swal2-progress-step, .swal2-progress-step-line{
         background: rgba($primary, 0.3);
       }
     }
   }
+
   .swal2-progress-step-line{
     background: $primary;
   }
@@ -86,37 +86,40 @@
 
 .swal2-actions.swal2-loading{
   .swal2-styled.swal2-confirm{
-    border-left-color: $primary !important;
     border-right-color: $primary !important;
+    border-left-color: $primary !important;
   }
 }
 
 .swal2-file, .swal2-input, .swal2-textarea{
   border: 1px solid $input-border-color;
+
   &:focus{
-    box-shadow: none;
     border-color: $input-focus-border-color;
+    box-shadow: none;
   }
 }
 
 .swal2-input{
-  height: auto;
-  display: block;
-  padding: $input-padding-y $input-padding-x;
-  font-family: $input-font-family;
   @include font-size($input-font-size);
-  font-weight: $input-font-weight;
-  line-height: $input-line-height;
-  color: $input-color;
+
+  display: block;
+  height: auto;
+  padding: $input-padding-y $input-padding-x;
+  border: $input-border-width solid $input-border-color;
   background-color: $input-bg;
   background-clip: padding-box;
-  border: $input-border-width solid $input-border-color;
+  color: $input-color;
+  font-weight: $input-font-weight;
+  font-family: $input-font-family;
+  line-height: $input-line-height;
 }
 
 .swal2-close{
-  font-family: $font-family-base;
   font-weight: $font-weight-light;
   font-size: 28px;
+  font-family: $font-family-base;
+
   &:focus{
     box-shadow: none;
   }

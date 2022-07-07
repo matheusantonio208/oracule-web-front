@@ -1,6 +1,6 @@
-//
+
 // _gallery.scss
-//
+
 
 .categories-filter {
     .list-inline-item {
@@ -9,10 +9,10 @@
 
         a {
             display: block;
+            margin: 5px;
+            padding: 8px 15px;
             color: var(--#{$variable-prefix}body-color);
             font-weight: $font-weight-semibold;
-            padding: 8px 15px;
-            margin: 5px;
             cursor: pointer;
         }
     }
@@ -21,18 +21,18 @@
 .gallery-box {
     position: relative;
     overflow: hidden;
-    border: 1px solid transparent;
     margin-bottom: 10px;
-    box-shadow: none;
-    background-color: transparent;
     padding: 8px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    box-shadow: none;
 
     &::before {
         content: "";
         position: absolute;
-        left: 0;
-        right: 0;
         top: 0;
+        right: 0;
+        left: 0;
         width: 100%;
         height: 0;
         background-color: $card-bg;
@@ -50,23 +50,23 @@
 
         .gallery-overlay {
             position: absolute;
-            top: 0px;
-            left: 0px;
-            bottom: 0px;
-            right: 0px;
-            opacity: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .5) 100%);
-            visibility: hidden;
-            overflow: hidden;
-            transition: all 0.4s ease-in-out 0s;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             display: flex;
-            width: 100%;
             align-items: flex-end;
+            overflow: hidden;
+            width: 100%;
             padding: 16px;
+            background: linear-gradient(180deg, rgb(0 0 0 / 0%) 10%, rgb(0 0 0 / 0%) 60%, rgb(0 0 0 / 50%) 100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease-in-out 0s;
 
             .overlay-caption {
-                color: $white;
                 margin: 0;
+                color: $white;
                 font-size: 16px;
             }
         }
@@ -80,15 +80,15 @@
         position: relative;
 
         .title {
-            font-size: 14px;
-            margin-bottom: 4px;
             display: none;
+            margin-bottom: 4px;
+            font-size: 14px;
         }
 
         .post {
             margin: 0;
-            transition: all 0.2s;
             color: $text-muted;
+            transition: all 0.2s;
         }
     }
 

@@ -1,17 +1,18 @@
-// 
+
 // _coming-soon.scss
-//
+
 
 // countdownlist
 
 .countdownlist {
-    text-align: center;
     display: flex;
     gap: 24px;
+    text-align: center;
 
 
     .countdownlist-item{
         width: 25%;
+
         &:last-of-type{
             .count-num{
                 &::after{
@@ -20,39 +21,41 @@
             }
         }
     }
+
     .count-title{
-        font-size: 13px;
-        font-weight: $font-weight-medium;
         display: block;
         margin-bottom: 8px;
-        color: rgba(var(--#{$variable-prefix}dark-rgb), 0.5);
+        color: rgb(var(--#{$variable-prefix}dark-rgb) 0.5);
+        font-weight: $font-weight-medium;
+        font-size: 13px;
         text-transform: uppercase;
     }
 
     .count-num{
-        background-color: $card-bg;
-        padding: 16px 8px;
         position: relative;
+        padding: 16px 8px;
         border-radius: $card-border-radius;
+        background-color: $card-bg;
         box-shadow: $box-shadow;
         font-weight: $font-weight-semibold;
         font-size: 32px;
         @media (max-width: 575.98px) {
             font-size: 18px;
         }
-    
+
         &::after{
             content: ":";
-            font-size: 20px;
             position: absolute;
-            right: -16px;
             top: 50%;
-            transform: translateY(-50%);
+            right: -16px;
             color: var(--#{$variable-prefix}dark);
+            font-size: 20px;
+            transform: translateY(-50%);
         }
     }
 }
-// coming soon 
+
+// coming soon
 
 .move-animation{
     animation: mover 1s infinite  alternate;
@@ -64,9 +67,9 @@
 }
 
 .coming-soon-text{
+    color: $white;
     font-weight: $font-weight-semibold;
     text-transform: uppercase;
-    color: $white;
     text-shadow: 3px 4px $success;
 }
 

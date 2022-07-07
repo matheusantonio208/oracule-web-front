@@ -1,10 +1,10 @@
-//
+
 // toast.scss
-//
+
 
 
 // toast
-.toast { 
+.toast {
     &:not(:last-child) {
       margin-bottom: $toast-padding-x;
     }
@@ -12,8 +12,8 @@
 
 @mixin toast-border-variant($bg) {
     .toast-body{
-        color: $bg;
         border-bottom: 3px solid $bg;
+        color: $bg;
     }
 }
 

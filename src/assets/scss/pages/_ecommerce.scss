@@ -1,10 +1,10 @@
-//
+
 // _ecommerce.scss
-//
+
 
 // product list
 
-#selection-element { 
+#selection-element {
     display: none;
 }
 
@@ -32,9 +32,9 @@
 .product-img-slider{
     .product-nav-slider{
         .nav-slide-item{
+            padding: 0.5rem;
             border: 1px solid $border-color;
             border-radius: $border-radius;
-            padding: 0.5rem;
             cursor: pointer;
         }
 
@@ -52,6 +52,6 @@
             .listname {
                 color: $success;
             }
-        }   
+        }
     }
 }

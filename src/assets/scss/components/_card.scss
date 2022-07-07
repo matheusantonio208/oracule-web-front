@@ -1,6 +1,6 @@
-// 
+
 // _card.scss
-// 
+
 
 .card {
     margin-bottom: $grid-gutter-width;
@@ -11,7 +11,7 @@
     border-bottom: 1px solid $border-color;
 }
 
-//Card Header Dropdown
+// Card Header Dropdown
 .card-header-dropdown {
     .dropdown-btn {
         padding: $card-cap-padding-y 0;
@@ -27,8 +27,8 @@
 }
 
 .card-title {
+    margin: 0 0 7px;
     font-size: 16px;
-    margin: 0 0 7px 0;
 }
 
 .card-title-desc {
@@ -43,8 +43,8 @@
     transition: all 0.4s;
 
     &:hover{
-        transform: translateY(calc(#{-$grid-gutter-width} / 5));
         box-shadow: $box-shadow-lg;
+        transform: translateY(calc(#{-$grid-gutter-width} / 5));
     }
 }
 
@@ -52,8 +52,8 @@
 // card color variant
 
 @mixin card-variant($bg) {
-    color: $white;
     background-color: $bg;
+    color: $white;
 }
 
 @each $color,
@@ -62,9 +62,9 @@ $value in $theme-colors {
         @include card-variant($value);
 
         .card-header, .card-footer {
+            border-color: transparent;
             background-color: rgba($white, 0.1);
             color: $white;
-            border-color: transparent;
         }
 
         .card-title {
@@ -77,6 +77,7 @@ $value in $theme-colors {
 $value in $theme-colors {
     .card-border-#{$color} {
         border-color: $value !important;
+
         .card-header, .card-footer {
             border-color: $value;
         }
@@ -86,11 +87,13 @@ $value in $theme-colors {
 
 .card-light{
     background-color: var(--#{$variable-prefix}light);
+
     .card-header, .card-footer{
+        background-color: rgb(var(--#{$variable-prefix}dark-rgb) 0.1);
         color: var(--#{$variable-prefix}body-color) !important;
-        background-color: rgba(var(--#{$variable-prefix}dark-rgb), 0.1);
     }
-    .card-title, .card-text { 
+
+    .card-title, .card-text {
         color: var(--#{$variable-prefix}body-color) !important;
     }
 }
@@ -105,19 +108,19 @@ $value in $theme-colors {
 .card-preloader {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(var(--#{$variable-prefix}light-rgb), 0.6);
+    left: 0;
     z-index: 9999;
+    background-color: rgb(var(--#{$variable-prefix}light-rgb) 0.6);
 }
 
 .card-status {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 40px;
     height: 40px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
     transform: translate(-50%,-50%)!important;
 }
 
@@ -132,15 +135,17 @@ $value in $theme-colors {
 .card-overlay{
     position: relative;
     overflow: hidden;
-    &:before {
+
+    &::before {
         content: "";
-        background-color: rgba($primary, 0.20);
         position: absolute;
         top: 0;
         right: 0;
-        left: 0;
         bottom: 0;
+        left: 0;
+        background-color: rgba($primary, 0.20);
     }
+
     .card-header, .card-footer {
         border-color: rgba($white, 0.15) !important;
     }
@@ -148,20 +153,25 @@ $value in $theme-colors {
 
 .card-toolbar-menu {
     line-height: 0.8;
+
     a {
         font-size: 17px;
     }
+
     .minimize-card {
         .plus{
             display: none;
-        }  
+        }
+
         .minus {
             display: block;
         }
+
         &.collapsed{
             .plus{
                 display: block;
-            }  
+            }
+
             .minus {
                 display: none;
             }

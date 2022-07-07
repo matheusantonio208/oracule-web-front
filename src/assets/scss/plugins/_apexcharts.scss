@@ -1,12 +1,14 @@
-//
+
 // apexcharts.scss
-//
+
 
 .apex-charts {
     min-height: 10px !important;
+
     text {
         font-family: $font-family-base !important;
     }
+
     .apexcharts-canvas {
         margin: 0 auto;
     }
@@ -21,14 +23,15 @@
     border: 1px solid $border-color !important;
     background-color: $card-bg !important;
     box-shadow: $box-shadow !important;
+
     * {
-        font-family: $font-family-base !important;
         color: $gray-600 !important;
+        font-family: $font-family-base !important;
     }
 
     .apexcharts-tooltip-title{
-        background-color: rgba(var(--#{$variable-prefix}light-rgb), .75) !important;
         border-bottom: 1px solid $border-color !important;
+        background-color: rgb(var(--#{$variable-prefix}light-rgb) .75) !important;
     }
 }
 
@@ -44,13 +47,13 @@
 
 .apexcharts-gridline {
     pointer-events: none;
-    stroke: rgba(var(--#{$variable-prefix}light-rgb), .75);
+    stroke: rgb(var(--#{$variable-prefix}light-rgb) .75);
 }
 
 .apexcharts-legend-text {
     color: $gray-600 !important;
-    font-family: $font-family-base !important;
     font-size: 13px !important;
+    font-family: $font-family-base !important;
 }
 
 .apexcharts-pie-label {
@@ -76,9 +79,9 @@
 // column dynamic loaded chart
 
 #dynamicloadedchart-wrap {
-    margin: 0px auto;
-    max-width: 800px;
     position: relative;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .chart-box {
@@ -89,33 +92,35 @@
 #chart-quarter {
     width: 96%;
     max-width: 48%;
-    box-shadow: none;
-    padding-left: 0;
     padding-top: 20px;
-    background: $card-bg;
+    padding-left: 0;
     border: 1px solid $border-color;
+    background: $card-bg;
+    box-shadow: none;
 }
 
 #chart-year {
-    float: left;
     position: relative;
-    transition: 1s ease transform;
     z-index: 3;
+    float: left;
+    transition: 1s ease transform;
+
     &.chart-quarter-activated {
-        transform: translateX(0);
         transition: 1s ease transform;
+        transform: translateX(0);
     }
 }
 
 #chart-quarter {
-    float: left;
     position: relative;
     z-index: -2;
+    float: left;
     transition: 1s ease transform;
+
     &.active {
+        z-index: 1;
         transition: 1.1s ease-in-out transform;
         transform: translateX(0);
-        z-index: 1;
     }
 }
 
@@ -123,6 +128,7 @@
     #chart-year {
         transform: translateX(50%);
     }
+
     #chart-quarter {
         transform: translateX(-50%);
     }
@@ -140,6 +146,7 @@
     circle ,line{
         stroke: $border-color;
     }
+
     text{
         fill: var(--#{$variable-prefix}body-color);
     }

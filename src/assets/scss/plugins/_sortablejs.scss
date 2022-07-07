@@ -1,12 +1,7 @@
-// 
-// _sortablejs.scss
-// 
-
-
 .nested-list{
     .list-group-item{
-        background-color: rgba($primary, 0.05);
         border-color: rgba($primary, 0.05);
+        background-color: rgba($primary, 0.05);
     }
 }
 
@@ -18,15 +13,16 @@
 .nested-sortable-handle{
     .handle{
         position: absolute;
-        left: 0;
         top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 42px;
         height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         cursor: grab;
     }
+
     .list-group-item{
         padding-left: 42px;
     }

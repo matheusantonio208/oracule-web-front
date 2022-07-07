@@ -1,19 +1,76 @@
-// 
-// ribbons.scss
-//
-
 .ribbon-box {
+
+    @each $color,
+    $value in $theme-colors {
+        .ribbon-#{$color} {
+            background: ($value);
+
+            &::before {
+                border-color: darken(($value), 10%) transparent transparent;
+            }
+
+            &.ribbon-shape {
+                &::before {
+                    border-top-color: ($value);
+                    border-left-color: ($value);
+                }
+
+                &::after {
+                    border-bottom-color: ($value);
+                    border-left-color: ($value);
+                }
+            }
+        }
+
+        &.right {
+            .ribbon-#{$color} {
+                background: ($value);
+
+                &.ribbon-shape {
+                    &::before {
+                        border-top-color: ($value);
+                        border-right-color: ($value);
+                    }
+
+                    &::after {
+                        border-right-color: ($value);
+                        border-bottom-color: ($value);
+                    }
+                }
+            }
+        }
+    }
+
+    @each $color,
+    $value in $theme-colors {
+        .ribbon-two-#{$color} {
+            span {
+                background: ($value);
+
+                &::before {
+                    border-top: 3px solid darken(($value), 15%);
+                    border-left: 3px solid darken(($value), 15%);
+                }
+
+                &::after {
+                    border-top: 3px solid darken(($value), 15%);
+                    border-right: 3px solid darken(($value), 15%);
+                }
+            }
+        }
+    }
+
     position: relative;
 
     .ribbon {
-        padding: 5px 12px;
-        box-shadow: 2px 5px 10px rgba($dark, 0.15);
-        color: $white;
-        font-size: $font-size-base;
-        font-weight: $font-weight-semibold;
         position: absolute;
-        left: -1px;
         top: 5px;
+        left: -1px;
+        padding: 5px 12px;
+        color: $white;
+        box-shadow: 2px 5px 10px rgba($dark, 0.15);
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-base;
 
         &.round-shape {
             border-radius: 0 30px 30px 0;
@@ -25,8 +82,8 @@
             &::before {
                 content: "";
                 position: absolute;
-                right: -17px;
                 top: 0;
+                right: -17px;
                 border: 14px solid transparent;
             }
 
@@ -44,15 +101,15 @@
     // ribbon circle
     &.ribbon-circle {
         .ribbon {
+            top: 20px;
+            left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 48px;
             height: 48px;
-            border-radius: 50%;
             padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            left: 20px;
-            top: 20px;
+            border-radius: 50%;
         }
     }
 
@@ -60,24 +117,25 @@
 
     &.ribbon-fill {
         overflow: hidden;
-            
+
         .ribbon {
-            transform: rotate(-45deg);
-            width: 93px;
-            height: 52px;
-            left: -36px;
             top: -16px;
+            left: -36px;
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            width: 93px;
+            height: 52px;
+            transform: rotate(-45deg);
         }
+
         &.ribbon-sm {
             .ribbon {
-                padding: 2px 12px;
                 width: 78px;
                 height: 42px;
-                font-size: 12px;
+                padding: 2px 12px;
                 box-shadow: none;
+                font-size: 12px;
             }
         }
     }
@@ -86,8 +144,8 @@
     &.right {
         .ribbon {
             position: absolute;
-            left: auto;
             right: 0;
+            left: auto;
 
             &.round-shape {
                 border-radius: 30px 0 0 30px;
@@ -107,8 +165,8 @@
 
         &.ribbon-circle {
             .ribbon {
-                left: auto;
                 right: 20px;
+                left: auto;
             }
         }
 
@@ -119,20 +177,20 @@
 
         &.ribbon-fill {
             .ribbon {
-                transform: rotate(45deg);
                 right: -38px;
                 left: auto;
+                transform: rotate(45deg);
             }
         }
 
         &.ribbon-box {
             .ribbon-two {
-                left: auto;
                 right: -5px;
+                left: auto;
 
                 span {
-                    left: auto;
                     right: -21px;
+                    left: auto;
                     transform: rotate(45deg);
                 }
             }
@@ -144,64 +202,23 @@
         clear: both;
     }
 
-    @each $color,
-    $value in $theme-colors {
-        .ribbon-#{$color} {
-            background: ($value);
-
-            &:before {
-                border-color: darken(($value), 10%) transparent transparent;
-            }
-
-            &.ribbon-shape {
-                &::before {
-                    border-left-color: ($value);
-                    border-top-color: ($value);
-                }
-
-                &::after {
-                    border-left-color: ($value);
-                    border-bottom-color: ($value);
-                }
-            }
-        }
-
-        &.right {
-            .ribbon-#{$color} {
-                background: ($value);
-
-                &.ribbon-shape {
-                    &::before {
-                        border-right-color: ($value);
-                        border-top-color: ($value);
-                    }
-
-                    &::after {
-                        border-right-color: ($value);
-                        border-bottom-color: ($value);
-                    }
-                }
-            }
-        }
-    }
-
 
     // Icon ribbon
 
     .icon-ribbon {
-        box-shadow: none;
-        left: 24px;
         top: -12px;
-        font-size: 40px;
+        left: 24px;
         padding: 0;
+        box-shadow: none;
+        font-size: 40px;
     }
 
 
     /* Ribbon two */
     .ribbon-two {
         position: absolute;
-        left: -5px;
         top: -5px;
+        left: -5px;
         z-index: 1;
         overflow: hidden;
         width: 75px;
@@ -209,57 +226,37 @@
         text-align: right;
 
         span {
-            font-size: 13px;
-            color: $white;
-            text-align: center;
-            line-height: 20px;
-            transform: rotate(-45deg);
-            width: 100px;
-            display: block;
-            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
             position: absolute;
             top: 19px;
             left: -21px;
+            display: block;
+            width: 100px;
+            color: $white;
+            box-shadow: 0 0 8px 0 rgb(0 0 0 / 6%), 0 1px 0 0 rgb(0 0 0 / 2%);
             font-weight: $font-weight-semibold;
+            font-size: 13px;
+            line-height: 20px;
+            text-align: center;
+            transform: rotate(-45deg);
 
-            &:before {
+            &::before {
                 content: "";
                 position: absolute;
-                left: 0;
                 top: 100%;
+                left: 0;
                 z-index: -1;
                 border-right: 3px solid transparent;
                 border-bottom: 3px solid transparent;
             }
 
-            &:after {
+            &::after {
                 content: "";
                 position: absolute;
-                right: 0;
                 top: 100%;
+                right: 0;
                 z-index: -1;
-                border-left: 3px solid transparent;
                 border-bottom: 3px solid transparent;
-            }
-        }
-    }
-
-    @each $color,
-    $value in $theme-colors {
-        .ribbon-two-#{$color} {
-
-            span {
-                background: ($value);
-
-                &:before {
-                    border-left: 3px solid darken(($value), 15%);
-                    border-top: 3px solid darken(($value), 15%);
-                }
-
-                &:after {
-                    border-right: 3px solid darken(($value), 15%);
-                    border-top: 3px solid darken(($value), 15%);
-                }
+                border-left: 3px solid transparent;
             }
         }
     }
@@ -286,59 +283,58 @@
     span {
         position: relative;
         display: block;
-        text-align: center;
+        width: 90px;
+        padding: 12px 8px 10px;
+        border-top-right-radius: 8px;
         color: $white;
         font-size: 14px;
         line-height: 1;
-        padding: 12px 8px 10px;
-        border-top-right-radius: 8px;
-        width: 90px;
+        text-align: center;
 
         &::after,
         &::before {
-            position: absolute;
             content: "";
+            position: absolute;
         }
 
         &::before {
-            height: 6px;
-            width: 6px;
-            left: -6px;
             top: 0;
+            left: -6px;
+            width: 6px;
+            height: 6px;
         }
 
         &::after {
-            height: 6px;
-            width: 8px;
-            left: -8px;
             top: 0;
+            left: -8px;
+            width: 8px;
+            height: 6px;
             border-radius: 8px 8px 0 0;
         }
     }
 
     &::after {
-        position: absolute;
         content: "";
+        position: absolute;
         width: 0;
         height: 0;
-        border-left: 44px solid transparent;
-        border-right: 44px solid transparent;
         border-top: 10px solid;
+        border-right: 44px solid transparent;
+        border-left: 44px solid transparent;
     }
 }
 
 @each $color,
 $value in $theme-colors {
     .ribbon-three-#{$color} {
-
         span {
             background: ($value);
 
-            &:before {
+            &::before {
                 background: ($value);
             }
 
-            &:after {
+            &::after {
                 background: darken($value, 10%);
             }
         }
@@ -349,15 +345,15 @@ $value in $theme-colors {
     }
 }
 
-//Ribbon Hover
+// Ribbon Hover
 .ribbon-box {
     .trending-ribbon {
-        transform: translateX(-50px);
         transition: all 0.5s ease;
+        transform: translateX(-50px);
 
         .trending-ribbon-text {
-            transition: all 0.5s ease;
             opacity: 0;
+            transition: all 0.5s ease;
         }
     }
 
@@ -370,21 +366,22 @@ $value in $theme-colors {
             }
         }
     }
+
     &.right {
         .trending-ribbon {
-            transform: translateX(50px);
             transition: all 0.5s ease;
-    
+            transform: translateX(50px);
+
             .trending-ribbon-text {
-                transition: all 0.5s ease;
                 opacity: 0;
+                transition: all 0.5s ease;
             }
         }
-    
+
         &:hover {
             .trending-ribbon {
                 transform: translateX(0);
-    
+
                 .trending-ribbon-text {
                     opacity: 1;
                 }
